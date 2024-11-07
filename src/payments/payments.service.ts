@@ -30,6 +30,12 @@ export class PaymentsService {
       cancel_url: envs.stripe_cancel_url,
     });
 
-    return session;
+    //return session;
+
+    return {
+      cancelUrl: session.cancel_url,
+      successUrl: session.success_url,
+      url: session.url,
+    };
   }
 }
